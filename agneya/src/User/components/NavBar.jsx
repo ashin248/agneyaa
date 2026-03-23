@@ -79,9 +79,9 @@ function NavBar() {
   // Loading state (optional spinner or skeleton)
   if (loadingUser) {
     return (
-      <nav className="navbar">
-        <div className="navbar-container">
-          <div className="logo">AGNEYA<span className="accent-dot">.</span></div>
+      <nav className="user-navbar">
+        <div className="user-nav-container">
+          <div className="user-logo">AGNEYA<span className="accent-dot">.</span></div>
           <div>Loading...</div>
         </div>
       </nav>
@@ -90,30 +90,30 @@ function NavBar() {
 
   return (
     <motion.nav 
-      className={`navbar ${scrolled ? "scrolled" : ""} ${menuOpen ? "menu-active" : ""}`}
+      className={`user-navbar ${scrolled ? "scrolled" : ""} ${menuOpen ? "menu-active" : ""}`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ type: "spring", stiffness: 100, damping: 20 }}
     >
-      <div className="navbar-container">
+      <div className="user-nav-container">
         
         {/* Logo */}
-        <Link to="/" className="logo" onClick={() => setMenuOpen(false)}>
+        <Link to="/" className="user-logo" onClick={() => setMenuOpen(false)}>
           AGNEYA<span className="accent-dot">.</span>
         </Link>
 
         {/* Navigation Links */}
         <motion.ul 
-          className={`nav-links ${menuOpen ? "active" : ""}`}
+          className={`user-nav-links ${menuOpen ? "active" : ""}`}
           variants={staggeredGravityContainer}
           initial="hidden"
           animate="visible"
         >
           {navLinks.map((item) => (
-            <motion.li key={item.name} className="nav-item" variants={gravityScrollVariant}>
+            <motion.li key={item.name} className="user-nav-item" variants={gravityScrollVariant}>
               <NavLink
                 to={item.href}
-                className={({ isActive }) => (isActive ? "nav-link active" : "nav-link")}
+                className={({ isActive }) => (isActive ? "user-nav-link active" : "user-nav-link")}
                 onClick={() => setMenuOpen(false)}
               >
                 {item.name}
@@ -122,7 +122,7 @@ function NavBar() {
           ))}
 
           {/* Mobile-only Login/Logout */}
-          <motion.li className="nav-item mobile-only" variants={gravityScrollVariant}>
+          <motion.li className="user-nav-item mobile-only" variants={gravityScrollVariant}>
             {user ? (
               <button className="logout-btn-mob" onClick={handleLogout}>
                 Logout
@@ -137,7 +137,7 @@ function NavBar() {
 
         {/* Desktop Actions */}
         <motion.div 
-          className="nav-actions"
+          className="user-nav-actions"
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.5 }}

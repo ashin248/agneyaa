@@ -87,6 +87,13 @@ const menuItems = [
         <h2 className="logo">
           AGNEYA <span>Admin</span>
         </h2>
+        <button 
+          className="sidebar-toggle" 
+          onClick={() => setIsOpen(!isOpen)}
+          title={isOpen ? "Collapse Sidebar" : "Expand Sidebar"}
+        >
+          <i className={`bi bi-chevron-${isOpen ? "left" : "right"}`}></i>
+        </button>
       </div>
 
       <nav className="sidebar-nav">

@@ -1,23 +1,23 @@
 :root {
-  /* --- Clean Grape Palette (പ്രീമിയം നിലനിർത്തി) --- */
+  /* --- Premium Grape & Acid Lime Palette --- */
   --color-primary: #9C51B6;
-  --color-secondary: #2D0A4A;
-  --color-accent: #84BD00;
-  --color-highlight: #DDA0DD;
+  --color-secondary: #0A0212;
+  --color-accent: #A3E635;
+  --color-highlight: #F3E8FF;
   
   --bg-primary: #0A0212;
   --bg-secondary: #160725;
-  --bg-card: rgba(30, 10, 50, 0.45);
+  --bg-card: rgba(22, 6, 42, 0.6);
   
   --text-primary: #FFFFFF;
-  --text-secondary: rgba(255, 255, 255, 0.85);
-  --text-muted: rgba(255, 255, 255, 0.6);
+  --text-secondary: rgba(255, 255, 255, 0.75);
+  --text-muted: rgba(255, 255, 255, 0.45);
   
-  --border-color: rgba(156, 81, 182, 0.25);
-  --border-hover: rgba(156, 81, 182, 0.5);
+  --border-color: rgba(156, 81, 182, 0.15);
+  --border-hover: rgba(156, 81, 182, 0.35);
   
-  --glass-bg: rgba(20, 5, 35, 0.75);
-  --glass-blur: blur(22px);
+  --glass-bg: rgba(15, 5, 25, 0.7);
+  --glass-blur: blur(28px);
   
   /* --- Compact Spacing (ഫ്ലിപ്കാർട്ട് സ്റ്റൈൽ ചെറിയത്) --- */
   --space-xs: 0.35rem;
