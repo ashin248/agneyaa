@@ -1,0 +1,70 @@
+.purchase-container, .payment-container {
+  max-width: 800px;
+  margin: var(--space-2xl) auto;
+  padding: var(--space-xl);
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+  animation: dropImpact 0.8s var(--ease-gravity);
+}
+
+.purchase-container h1 {
+  font-size: 2.5rem;
+  font-weight: 900;
+  margin-bottom: var(--space-lg);
+  color: #fff;
+}
+
+.address-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.address-form input {
+  padding: 1.2rem;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  color: #fff;
+  font-size: 1rem;
+  transition: all var(--transition-fast);
+}
+
+.address-form input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.proceed-btn, .btn-confirm {
+  width: 100%;
+  padding: 1.4rem;
+  background: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: var(--radius-full);
+  font-size: 1.2rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: 2.5rem;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  box-shadow: 0 10px 20px rgba(156, 81, 182, 0.3);
+}
+
+.proceed-btn:hover:not(:disabled), .btn-confirm:hover {
+  background: var(--color-highlight);
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(156, 81, 182, 0.5);
+}
+
+.proceed-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}

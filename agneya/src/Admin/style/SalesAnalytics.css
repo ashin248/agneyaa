@@ -1,0 +1,94 @@
+.sales-analytics {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+  margin-bottom: 60px;
+}
+
+.stat-card {
+  padding: 2.5rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  transition: all var(--transition-normal);
+  animation: dropImpact 0.8s var(--ease-gravity) both;
+}
+
+.stat-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--color-primary);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.stat-icon {
+  width: 75px;
+  height: 75px;
+  background: rgba(156, 81, 182, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  font-size: 2rem;
+  color: var(--color-primary);
+  border: 1px solid rgba(156, 81, 182, 0.2);
+}
+
+.stat-value {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #fff;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.luxury-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 40px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+}
+
+.luxury-table th {
+  background: rgba(0,0,0,0.4);
+  padding: 1.5rem;
+  text-align: left;
+  color: var(--color-primary);
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 1.5px;
+}
+
+.luxury-table td {
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-secondary);
+}
+
+.luxury-table tr:hover td {
+  background: rgba(255, 255, 255, 0.02);
+  color: #fff;
+}
+
+.text-grape {
+  color: var(--color-primary);
+  font-weight: 800;
+}

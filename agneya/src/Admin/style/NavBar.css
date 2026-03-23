@@ -1,0 +1,121 @@
+/* src/Admin/style/nabBar.css */
+.admin-sidebar {
+  background: var(--bg-secondary);
+  border-right: 1px solid var(--border-color);
+  width: 280px;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-normal);
+  z-index: 100;
+}
+
+.admin-sidebar.collapsed {
+  width: 80px;
+}
+
+.sidebar-header {
+  padding: var(--space-xl);
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.admin-sidebar .logo {
+  font-size: var(--text-xl);
+  font-weight: 800;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+.admin-sidebar.collapsed .logo span {
+  display: none;
+}
+
+.admin-sidebar .logo span {
+  color: var(--color-primary);
+  font-weight: 400;
+}
+
+.sidebar-nav {
+  flex: 1;
+  padding: var(--space-md);
+  overflow-y: auto;
+}
+
+.sidebar-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: 12px 16px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  border-radius: var(--radius-md);
+  font-size: var(--text-base);
+  font-weight: 500;
+  transition: all var(--transition-fast);
+}
+
+.nav-item:hover {
+  background: rgba(156, 81, 182, 0.1);
+  color: var(--text-primary);
+}
+
+.nav-item.active {
+  background: linear-gradient(90deg, rgba(156, 81, 182, 0.2), transparent);
+  color: var(--color-accent);
+  border-left: 3px solid var(--color-primary);
+}
+
+.nav-icon {
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: center;
+  min-width: 24px;
+}
+
+.admin-sidebar.collapsed .nav-label {
+  display: none;
+}
+
+.sidebar-footer {
+  padding: var(--space-md);
+  border-top: 1px solid var(--border-color);
+}
+
+.logout-button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: 12px 16px;
+  background: transparent;
+  border: none;
+  color: #ff4d4d;
+  font-size: var(--text-base);
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.logout-button:hover {
+  background: rgba(255, 77, 77, 0.1);
+}
+
+.admin-sidebar.collapsed .logout-button {
+  justify-content: center;
+  padding: 12px;
+}

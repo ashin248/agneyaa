@@ -1,0 +1,90 @@
+.admin-login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at center, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+}
+
+.admin-login-card {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  padding: 3.5rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  width: 100%;
+  max-width: 480px;
+  text-align: center;
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.6);
+  animation: dropImpact 1s var(--ease-gravity);
+}
+
+.security-tag {
+  font-size: 0.7rem;
+  letter-spacing: 3px;
+  color: #ff4d4d;
+  border: 1px solid #ff4d4d;
+  display: inline-block;
+  padding: 6px 16px;
+  margin-bottom: 30px;
+  font-weight: 900;
+  text-transform: uppercase;
+  border-radius: var(--radius-full);
+  background: rgba(255, 77, 77, 0.1);
+}
+
+.admin-input-group {
+  margin: 30px 0;
+  text-align: left;
+}
+
+.admin-input-group label {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.admin-input-group input {
+  width: 100%;
+  padding: 1.4rem;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  color: white;
+  text-align: center;
+  font-size: 1.5rem;
+  letter-spacing: 10px;
+  transition: all var(--transition-fast);
+}
+
+.admin-input-group input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 20px rgba(156, 81, 182, 0.4);
+}
+
+.admin-login-btn {
+  width: 100%;
+  background: var(--color-primary);
+  color: white;
+  padding: 1.4rem;
+  border: none;
+  border-radius: 12px;
+  font-weight: 900;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  box-shadow: 0 10px 20px rgba(156, 81, 182, 0.3);
+}
+
+.admin-login-btn:hover:not(:disabled) {
+  background: var(--color-highlight);
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(156, 81, 182, 0.5);
+}

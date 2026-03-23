@@ -1,0 +1,7 @@
+/* src/Admin/style/Dashboard.css 
+   Included for explicit styling requests. Used as backup container styles. */
+.dashboard-view {
+  padding: var(--space-2xl);
+  min-height: 100vh;
+  background: var(--bg-primary);
+}

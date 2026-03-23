@@ -1,0 +1,65 @@
+.admin-dashboard-content {
+  padding: var(--space-xl);
+  min-height: 100vh;
+}
+
+.admin-header-info {
+  margin-bottom: var(--space-2xl);
+}
+
+.text-grape {
+  font-size: 3rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, #fff 0%, var(--color-primary) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 0.5rem;
+}
+
+/* Tab Navigation */
+.admin-tabs {
+  display: flex;
+  gap: 1rem;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: var(--space-2xl);
+  overflow-x: auto;
+  padding-bottom: 5px;
+  scrollbar-width: none;
+}
+
+.tab-button {
+  padding: 1rem 2rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: 0.8rem;
+  border-radius: 12px 12px 0 0;
+  transition: all var(--transition-normal);
+  white-space: nowrap;
+}
+
+.tab-button:hover {
+  background: rgba(156, 81, 182, 0.1);
+  color: #fff;
+}
+
+.tab-button.active {
+  background: rgba(156, 81, 182, 0.05);
+  border-bottom: 3px solid var(--color-primary);
+  color: var(--color-primary);
+}
+
+/* Main View Area */
+.admin-main-view {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 3rem;
+  min-height: 600px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+  animation: dropImpact 0.8s var(--ease-gravity) both;
+}

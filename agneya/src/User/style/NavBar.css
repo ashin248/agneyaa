@@ -1,0 +1,136 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 1.5rem 0;
+  transition: all 0.4s var(--ease-float);
+}
+
+.navbar.scrolled {
+  padding: 1rem 0;
+  background: rgba(10, 2, 18, 0.8);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.navbar-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: 2px;
+  text-decoration: none;
+}
+
+.accent-dot {
+  color: var(--color-primary);
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.nav-link {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all var(--transition-fast);
+  position: relative;
+}
+
+.nav-link:hover, .nav-link.active {
+  color: #fff;
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--color-primary);
+  border-radius: var(--radius-full);
+  box-shadow: 0 0 10px var(--color-primary);
+}
+
+.login-link-desktop {
+  background: var(--color-primary);
+  padding: 0.8rem 1.8rem;
+  border-radius: var(--radius-full);
+  color: #fff;
+  font-weight: 800;
+  text-decoration: none;
+  transition: all var(--transition-normal);
+  box-shadow: 0 5px 15px rgba(156, 81, 182, 0.3);
+}
+
+.login-link-desktop:hover {
+  transform: translateY(-2px);
+  background: var(--color-highlight);
+  box-shadow: 0 8px 25px rgba(156, 81, 182, 0.5);
+}
+
+.user-profile-nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logout-icon-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--border-color);
+  background: transparent;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.logout-icon-btn:hover {
+  background: rgba(255, 0, 0, 0.1);
+  border-color: #ff4d4d;
+  color: #ff4d4d;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.hamburger .line {
+  width: 30px;
+  height: 3px;
+  background: #fff;
+  border-radius: 3px;
+}
+
+@media (max-width: 1024px) {
+  .nav-links.desktop-only {
+    display: none;
+  }
+  .hamburger {
+    display: flex;
+  }
+}

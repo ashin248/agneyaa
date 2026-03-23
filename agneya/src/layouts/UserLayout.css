@@ -1,0 +1,23 @@
+/* UserLayout.css */
+.user-layout-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--bg-primary); /* Midnight Purple */
+}
+
+.user-main-content {
+  flex: 1;
+  width: 100%;
+  margin-top: 70px; /* Navbar-ന്റെ ഉയരം അനുസരിച്ച് അഡ്ജസ്റ്റ് ചെയ്യുക */
+  padding: var(--space-md);
+  position: relative;
+  z-index: 1;
+}
+
+/* പേജ് ട്രാൻസിഷൻ സ്മൂത്ത് ആക്കാൻ */
+.user-main-content > div {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}

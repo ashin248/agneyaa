@@ -1,0 +1,61 @@
+.main-editor-container {
+  display: flex;
+  gap: 2.5rem;
+  height: 85vh;
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.toolbar {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  padding: 1.5rem;
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  border: 1px solid var(--border-color);
+}
+
+.canvas-wrapper {
+  background: #fdfdfd;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 40px 100px rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  border: 5px solid rgba(255,255,255,0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.layer-panel {
+  width: 320px;
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  padding: 2rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+}
+
+.layer-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.03);
+  margin-bottom: 10px;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.layer-item:hover {
+  background: rgba(156, 81, 182, 0.1);
+  border-color: var(--color-primary);
+}
