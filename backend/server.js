@@ -23,9 +23,10 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 // =========================
 // 3. CORS Middleware (allow credentials for session)
 // =========================
+const allowedOrigin = process.env.FRONTEND_URL || 'http://localhost:5173';
 app.use(
   cors({
-    origin: 'http://localhost:5173', // your Vite frontend port
+    origin: allowedOrigin,
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization'],
@@ -41,21 +42,28 @@ app.use(express.urlencoded({ extended: true }));
 // =========================
 // 5. Session Middleware (after static files & CORS)
 // =========================
+let mongoStore;
+try {
+  mongoStore = MongoStore.create({
+    mongoUrl: process.env.MONGO_URI,
+    collectionName: 'sessions',
+    ttl: 7 * 24 * 60 * 60, // 7 days
+  });
+} catch (error) {
+  console.error("❌ Critical: Could not create MongoStore for sessions.", error.message);
+}
+
 app.use(
   session({
     secret: process.env.SESSION_SECRET || 'agneya-super-secret-key-2026-change-this',
     resave: false,
     saveUninitialized: false,
-    store: MongoStore.create({
-      mongoUrl: process.env.MONGO_URI,
-      collectionName: 'sessions',
-      ttl: 7 * 24 * 60 * 60, // 7 days
-    }),
+    store: mongoStore,
     cookie: {
       maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
       httpOnly: true,
-      secure: false, // change to true in production (HTTPS)
-      sameSite: 'lax',
+      secure: process.env.NODE_ENV === 'production', // true in production (HTTPS)
+      sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax', // none for cross-site in production
     },
   })
 );

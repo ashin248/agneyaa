@@ -209,18 +209,16 @@ function OnlinePayment() {
 
             {/* Payment Actions */}
             <div className="payment-options">
-               <div className="tabs" style={{ display: 'flex', gap: '10px', marginBottom: '20px' }}>
+               <div className="payment-method-tabs">
                   <button 
-                    className={paymentMethod === 'razorpay' ? 'active' : ''} 
+                    className={`method-tab ${paymentMethod === 'razorpay' ? 'active' : ''}`} 
                     onClick={() => setPaymentMethod('razorpay')}
-                    style={{ flex: 1, padding: '10px', borderRadius: '8px', cursor: 'pointer', background: paymentMethod === 'razorpay' ? 'var(--color-primary)' : 'rgba(255,255,255,0.05)', color: 'white', border: '1px solid var(--glass-border)' }}
                   >
                     Online (Razorpay)
                   </button>
                   <button 
-                    className={paymentMethod === 'upi' ? 'active' : ''} 
+                    className={`method-tab ${paymentMethod === 'upi' ? 'active' : ''}`} 
                     onClick={() => setPaymentMethod('upi')}
-                    style={{ flex: 1, padding: '10px', borderRadius: '8px', cursor: 'pointer', background: paymentMethod === 'upi' ? 'var(--color-primary)' : 'rgba(255,255,255,0.05)', color: 'white', border: '1px solid var(--glass-border)' }}
                   >
                     Manual UPI
                   </button>
@@ -228,8 +226,8 @@ function OnlinePayment() {
 
                {paymentMethod === 'razorpay' ? (
                  <div className="upi-section">
-                    <h3 style={{ marginBottom: '1rem' }}>Secure Checkout via Razorpay</h3>
-                    <p style={{ color: "var(--text-dim)", marginBottom: '2rem' }}>
+                    <h3>Secure Checkout via Razorpay</h3>
+                    <p className="section-desc">
                       Pay securely using Credit/Debit Cards, NetBanking, UPI, or Wallets.
                     </p>
                     <button
@@ -241,31 +239,30 @@ function OnlinePayment() {
                     </button>
                  </div>
                ) : (
-                 <div className="manual-upi-section" style={{ background: 'rgba(255,255,255,0.03)', padding: '20px', borderRadius: '15px', border: '1px solid var(--glass-border)' }}>
-                    <h3 style={{ marginBottom: '15px' }}>Direct UPI Payment</h3>
-                    <p style={{ color: '#aaa', fontSize: '0.9rem', marginBottom: '20px' }}>
+                 <div className="manual-upi-section">
+                    <h3>Direct UPI Payment</h3>
+                    <p className="section-desc">
                       Please pay the exact amount to the following UPI ID and enter the Transaction ID below.
                     </p>
                     
-                    <div className="upi-id-box" style={{ background: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '10px', fontSize: '1.2rem', fontWeight: 'bold', letterSpacing: '1px', color: 'var(--color-primary)', marginBottom: '20px' }}>
+                    <div className="upi-id-box">
                       919656353903@waaxis
                     </div>
 
-                    <div className="qr-code-placeholder" style={{ marginBottom: '20px' }}>
+                    <div className="qr-code-box">
                        <img 
                           src={`https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=upi://pay?pa=919656353903@waaxis%26pn=Agneya%20Print%20Services%26am=${order.amount}%26cu=INR`} 
                           alt="UPI QR Code" 
-                          style={{ borderRadius: '10px', border: '5px solid white' }}
                        />
-                       <p style={{ fontSize: '0.8rem', color: '#888', marginTop: '10px' }}>Scan with any UPI App (GPay, PhonePe, etc.)</p>
+                       <p className="qr-hint">Scan with any UPI App (GPay, PhonePe, etc.)</p>
                     </div>
 
                     <input 
                        type="text"
+                       className="transaction-input"
                        placeholder="Enter 12-digit UTR / Transaction ID *"
                        value={transactionId}
                        onChange={(e) => setTransactionId(e.target.value)}
-                       style={{ width: '100%', padding: '12px', borderRadius: '8px', background: 'rgba(0,0,0,0.2)', border: '1px solid var(--glass-border)', color: 'white', marginBottom: '20px' }}
                     />
 
                     <button
@@ -278,7 +275,7 @@ function OnlinePayment() {
                  </div>
                )}
 
-               {error && <p className="error-message" style={{ marginTop: '1rem', color: '#ff4d4d' }}>{error}</p>}
+               {error && <p className="error-message">{error}</p>}
             </div>
           </>
         )}
@@ -286,7 +283,6 @@ function OnlinePayment() {
         <button
           className="btn-back"
           onClick={() => navigate(-1)}
-          style={{ marginTop: "2rem" }}
         >
           Cancel
         </button>
