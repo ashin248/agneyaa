@@ -5,13 +5,13 @@ import { gravityScrollVariant, staggeredGravityContainer } from "../../shared/an
 import "../style/Service.css";
 
 const services = [
-  { name: "Digital Printing", img: "/services/Brochure & Catalog Printing.png" },
-  { name: "Offset Printing", img: "/services/Label Printing.png" },
-  { name: "Brochure & Catalog Printing", img: "/services/Letterheads&Business Cards.png" },
-  { name: "Business Cards & Letterheads", img: "/services/Offset Printing.png" },
-  { name: "Label Printing", img: "/services/Printing Machine.png" },
-  { name: "Acrylic Keychains & Photo Printing", img: "/services/Offset Printing.png" },
-  { name: "Custom T-Shirt Printing", img: "/services/T-Shirt Printing.png" },
+  { name: "Digital Printing", icon: "bi-printer" },
+  { name: "Offset Printing", icon: "bi-layers" },
+  { name: "Brochure & Catalog Printing", icon: "bi-book" },
+  { name: "Business Cards & Letterheads", icon: "bi-person-vcard" },
+  { name: "Label Printing", icon: "bi-tags" },
+  // { name: "Acrylic Keychains & Photo Printing", icon: "bi-image" },
+  { name: "Custom T-Shirt Printing", icon: "bi-palette" },
 ];
 
 // Removed inline variants, using imported gravity variants instead
@@ -58,12 +58,8 @@ function Service() {
             >
               <div className="card-shine" /> {/* Reflection effect */}
               
-              <div className="image-wrapper">
-                <img
-                  src={service.img}
-                  alt={service.name}
-                  className="service-image"
-                />
+              <div className="icon-wrapper">
+                <i className={`bi ${service.icon} service-icon`}></i>
               </div>
 
               <h5 className="service-title">{service.name}</h5>

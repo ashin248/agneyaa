@@ -460,16 +460,19 @@ function OnlineShopping() {
       {showAuthModal && (
         <div className="auth-modal-overlay">
           <motion.div
-            className="auth-modal"
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            exit={{ scale: 0.8, opacity: 0 }}
+            className="auth-modal glass"
+            initial={{ scale: 0.8, opacity: 0, y: 20 }}
+            animate={{ scale: 1, opacity: 1, y: 0 }}
+            exit={{ scale: 0.8, opacity: 0, y: 20 }}
           >
+            <div className="auth-modal-icon">
+              <i className="bi bi-lock-fill"></i>
+            </div>
             <h2>Login Required</h2>
-            <p>You need to login to use the Buy Now or Customize features.</p>
-            <div className="modal-actions">
+            <p>You need to login to use the <span>Buy Now</span> or <span>Customize</span> features.</p>
+            <div className="auth-modal-actions">
               <button
-                className="primary-btn"
+                className="primary-btn login-btn"
                 onClick={() => {
                   setShowAuthModal(false);
                   navigate("/login");
@@ -477,7 +480,12 @@ function OnlineShopping() {
               >
                 Login
               </button>
-              <button onClick={() => setShowAuthModal(false)}>Cancel</button>
+              <button 
+                className="secondary-btn cancel-btn"
+                onClick={() => setShowAuthModal(false)}
+              >
+                Cancel
+              </button>
             </div>
           </motion.div>
         </div>
@@ -486,8 +494,6 @@ function OnlineShopping() {
         </div> {/* end shop-content-area */}
       </div> {/* end shop-main-layout */}
 
-      {/* Reviews Section */}
-      <ProductReviews productId="general-shop" />
     </div>
   );
 }
